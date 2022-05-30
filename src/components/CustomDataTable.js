@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useCallback, useState } from 'react';
-import { Delete } from '@carbon/icons-react';
+import { Delete24 } from '@carbon/icons-react';
 import {
   TableContainer,
   Table,
@@ -171,7 +171,7 @@ const CustomDataTable = ({
           onCancel={handleCancelSelection}>
           <TableBatchAction
             tabIndex={hasBatchActions ? 0 : -1}
-            renderIcon={Delete}
+            renderIcon={Delete24}
             onClick={handleDeleteRows}>
             Delete
           </TableBatchAction>

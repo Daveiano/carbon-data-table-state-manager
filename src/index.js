@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import CustomDataTable from './components/CustomDataTable';
 import {
   rowsMany as demoRowsMany,
@@ -19,4 +19,6 @@ const App = () => (
   />
 );
 
-render(<App />, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<App />);
