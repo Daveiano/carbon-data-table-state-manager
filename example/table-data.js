@@ -1,4 +1,4 @@
-import { TABLE_SORT_DIRECTION } from './misc';
+import { TABLE_SORT_DIRECTION } from '../src/misc';
 
 export const columns = [
   {

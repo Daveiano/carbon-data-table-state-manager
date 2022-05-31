@@ -1,12 +1,12 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import CustomDataTable from './components/CustomDataTable';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import CustomDataTable from "../src";
 import {
   rowsMany as demoRowsMany,
   columns as demoColumns,
   sortInfo as demoSortInfo,
-} from './table-data';
-import 'carbon-components/scss/globals/scss/styles.scss';
+} from "./table-data";
+import "carbon-components/scss/globals/scss/styles.scss";
 
 const App = () => (
   <CustomDataTable
@@ -19,6 +19,6 @@ const App = () => (
   />
 );
 
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(<App />);

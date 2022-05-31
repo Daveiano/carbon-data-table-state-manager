@@ -1,32 +1,37 @@
 {
-  "name": "carbon-components-react-example-fully-customized-data-table",
+  "name": "carbon-data-table-state-manager",
   "version": "1.0.0-alpha1",
   "private": false,
+  "main": "",
   "license": "GPL-3.0-or-later",
   "description": "Sample project for creating fully customized state management of carbon-components-react data table",
   "dependencies": {
-    "carbon-components": "10.25.0",
-    "carbon-components-react": "^7.50.0",
     "carbon-icons": "7.0.7",
-    "lodash-es": "^4.17.0",
+    "moment": "^2.29.3",
     "prop-types": "^15.7.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "^3.2.0",
-    "sass": "^1.52.1",
     "use-debounce": "^7.0.1"
+  },
+  "peerDependencies": {
+    "carbon-components": "10.x",
+    "carbon-components-react": "7.x",
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "devDependencies": {
     "@types/carbon-components-react": "^7.46.1",
     "@types/carbon__icons-react": "^10.24.0",
     "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.5"
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.30.0",
+    "prettier": "2.6.2",
+    "typescript": "^4.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "tsc"
   },
   "browserslist": [
     "last 1 version",
