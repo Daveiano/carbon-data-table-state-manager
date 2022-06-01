@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import doesRowMatchSearchString from "../misc/doesRowMatchSearchString";
-import { dataItemDataTable } from "../index";
+import { dataItem } from "../index";
 
 /**
  * @param {object[]} rows The table rows.
@@ -9,12 +9,12 @@ import { dataItemDataTable } from "../index";
  * @returns {Array} The setter for the table row selection.
  */
 const useRowSelection = (
-  rows: dataItemDataTable[],
+  rows: dataItem[],
   searchString: string,
-  setRows: (a: dataItemDataTable[]) => void
-): ((rowId: number, selected: boolean) => void)[] => {
+  setRows: (a: dataItem[]) => void
+): ((rowId: number | undefined, selected: boolean) => void)[] => {
   const setRowSelection = useCallback(
-    (rowId, selected) => {
+    (rowId: number | undefined, selected: boolean) => {
       setRows(
         rows.map((row, index) => {
           const doChange =

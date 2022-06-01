@@ -16,7 +16,13 @@ type PaginationProps = {
  */
 const Pagination = (props: PaginationProps): React.ReactElement => {
   const handleChangePage = useCallback(
-    ({ page: newPage, pageSize: newPageSize }) => {
+    ({
+      page: newPage,
+      pageSize: newPageSize,
+    }: {
+      page: number;
+      pageSize: number;
+    }) => {
       if (props.onChangePageSize && props.pageSize !== newPageSize) {
         props.onChangePageSize({ pageSize: newPageSize });
       }

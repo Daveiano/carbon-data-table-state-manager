@@ -1,4 +1,4 @@
-import { dataItemDataTable } from "../index";
+import { dataItem } from "../index";
 
 /**
  * @param row A table row.
@@ -6,7 +6,7 @@ import { dataItemDataTable } from "../index";
  * @returns `true` if the given table row matches the given search string.
  */
 const doesRowMatchSearchString = (
-  row: dataItemDataTable,
+  row: dataItem,
   searchString: string
 ): boolean =>
   Object.keys(row).some(

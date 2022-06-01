@@ -52,7 +52,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@types/carbon-components-react@^7.46.1":
+"@types/carbon-components-react@^7.55.1":
   version "7.55.1"
   resolved "https://registry.yarnpkg.com/@types/carbon-components-react/-/carbon-components-react-7.55.1.tgz#0e5efe98a363510d3ff46f9c9ec031c008600be3"
   integrity sha512-N0iCHZGowGCrZkR14bMfCfrBz4GDGTqXtVy+/ZXdjbH/bi9xtOc9PCbBgnNR8b5+5G1z+wm32HWm4MsNXGt6AQ==

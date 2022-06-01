@@ -1,6 +1,6 @@
 import { TABLE_SORT_DIRECTION } from "../misc";
 import useCollator from "./useCollator";
-import { dataItemDataTable } from "../index";
+import { dataItem } from "../index";
 
 /**
  * The map of how sorting direction affects sorting order.
@@ -22,10 +22,10 @@ type SortInfo = {
  * @returns {Array} The sorted table rows.
  */
 const useSortedRows = (
-  rows: dataItemDataTable[],
+  rows: dataItem[],
   sortInfo: SortInfo,
   collator: Intl.Collator
-): [dataItemDataTable[]] => {
+): [dataItem[]] => {
   const compare = useCollator(collator);
   const { columnId: sortColumnId, direction: sortDirection } = sortInfo;
   const sortedRows =

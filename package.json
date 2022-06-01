@@ -18,7 +18,7 @@
     "react-dom": ">=16"
   },
   "devDependencies": {
-    "@types/carbon-components-react": "^7.46.1",
+    "@types/carbon-components-react": "^7.55.1",
     "@types/carbon__icons-react": "^10.24.0",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",

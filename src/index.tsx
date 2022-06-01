@@ -35,17 +35,18 @@ import {
   useUniqueId,
 } from "./hooks";
 import Pagination from "./components/pagination";
-import { TABLE_SORT_DIRECTION } from "./misc";
-import { dataItem } from "../../diagrams/types";
-import { extendedPropertyParameter } from "../../diagrams/scaling";
-import { dataHasRecordsForProperty } from "../../diagrams/hoc";
+import { dataHasRecordsForProperty, TABLE_SORT_DIRECTION } from "./misc";
 
-export type dataItemDataTable = dataItem & { selected: boolean };
+export type dataItem = {
+  [key: string]: any;
+  selected: boolean;
+  rowId: number | string;
+};
 
 interface TableBaseProps {
-  collator?: Intl.Collator;
+  collator: Intl.Collator;
   columns: {
-    id: extendedPropertyParameter;
+    id: string | number;
     title: string;
     sortCycle?: string;
     small?: string;
@@ -54,7 +55,7 @@ interface TableBaseProps {
   hasSelection?: boolean;
   id?: string;
   pageSize: number;
-  rows: dataItemDataTable[];
+  rows: dataItem[];
   size?: DataTableSize;
   sortInfo: {
     columnId: string;
@@ -131,14 +132,14 @@ const TableBase: React.FC<TableBaseProps> = (
   }, [setRowSelection]);
 
   const handleChangeSearchString = useCallback(
-    ({ target }) => {
+    ({ target }: { target: any }) => {
       setSearchString(target.value);
     },
     [setSearchString]
   );
 
   const handleChangeSelection = useCallback(
-    (event) => {
+    (event: any) => {
       const { currentTarget } = event;
       const row = currentTarget.closest("tr");
       if (row) {
@@ -149,14 +150,14 @@ const TableBase: React.FC<TableBaseProps> = (
   );
 
   const handleChangeSelectionAll = useCallback(
-    (event) => {
+    (event: any) => {
       setRowSelection(undefined, event.currentTarget.checked);
     },
     [setRowSelection]
   );
 
   const handleChangeSort = useCallback(
-    (event) => {
+    (event: any) => {
       const { currentTarget } = event;
       const {
         columnId,
@@ -169,14 +170,14 @@ const TableBase: React.FC<TableBaseProps> = (
   );
 
   const handleChangePageSize = useCallback(
-    ({ pageSize }) => {
+    ({ pageSize }: { pageSize: number }) => {
       setPageSize(pageSize);
     },
     [setPageSize]
   );
 
   const handleChangeStart = useCallback(
-    ({ start }) => {
+    ({ start }: { start: number }) => {
       setStart(start);
     },
     [setStart]
@@ -218,10 +219,11 @@ const TableBase: React.FC<TableBaseProps> = (
           secondaryButtonText="Cancel"
           onRequestClose={() => setModalOpen(false)}
           onRequestSubmit={() => {
-            window.electron.IpcSend(
+            /* @todo Implement callback as prop */
+            /*window.electron.IpcSend(
               "delete",
               rows.filter((row) => row.selected)
-            );
+            );*/
             setModalOpen(false);
           }}
         ></Modal>
@@ -273,6 +275,7 @@ const TableBase: React.FC<TableBaseProps> = (
                     selectedRowsCountInFiltered > 0 && !selectedAllInFiltered
                   }
                   ariaLabel="Select all rows"
+                  // @ts-ignore
                   name={selectionAllName}
                   onSelect={handleChangeSelectionAll}
                 />
@@ -289,7 +292,9 @@ const TableBase: React.FC<TableBaseProps> = (
                     <TableHeader
                       key={columnId}
                       isSortable={Boolean(sortCycle)}
-                      isSortHeader={sortCycle && columnId === sortColumnId}
+                      isSortHeader={Boolean(
+                        sortCycle && columnId === sortColumnId
+                      )}
                       sortDirection={sortDirectionForThisCell}
                       data-column-id={columnId}
                       data-sort-cycle={sortCycle}
@@ -341,6 +346,7 @@ const TableBase: React.FC<TableBaseProps> = (
                     <TableSelectRow
                       id={`${elementId}--select-${rowId}`}
                       checked={Boolean(selected)}
+                      // @ts-ignore
                       name={selectionName}
                       ariaLabel="Select row"
                       onSelect={handleChangeSelection}

@@ -61,7 +61,15 @@ const useSortInfo = (initialSortInfo: {
 ] => {
   const [sortInfo, setSortInfo] = useState(initialSortInfo);
   const invokeSetSortInfo = useCallback(
-    ({ columnId, sortCycle, oldDirection }) => {
+    ({
+      columnId,
+      sortCycle,
+      oldDirection,
+    }: {
+      columnId: string;
+      sortCycle: string | undefined;
+      oldDirection: DataTableSortState;
+    }) => {
       const direction = getNextSort({ sortCycle, oldDirection });
       if (direction === TABLE_SORT_DIRECTION.NONE && columnId !== "name") {
         // Resets the sorting, given non-primary sorting column has got in
