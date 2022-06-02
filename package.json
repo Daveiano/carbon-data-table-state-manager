@@ -4,21 +4,26 @@
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
   "license": "GPL-3.0-or-later",
   "description": "Sample project for creating fully customized state management of carbon-components-react data table",
   "dependencies": {
-    "carbon-icons": "7.0.7",
-    "moment": "^2.29.3",
+    "dayjs": "^1.11.2",
     "prop-types": "^15.7.0",
     "use-debounce": "^7.0.1"
   },
   "peerDependencies": {
     "carbon-components": "10.x",
     "carbon-components-react": "7.x",
+    "@carbon/icons-react": "10.x",
     "react": ">=16",
     "react-dom": ">=16"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "@types/carbon-components-react": "^7.55.1",
     "@types/carbon__icons-react": "^10.24.0",
     "@types/react": "^18.0.9",
@@ -40,6 +45,7 @@
   "scripts": {
     "prettier": "prettier --write .",
     "lint": "eslint --ext .ts,.tsx .",
+    "start": "rollup -c -w",
     "build": "rollup -c"
   },
   "browserslist": [

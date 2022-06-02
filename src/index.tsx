@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 
-import moment from "moment";
+import dayjs from "dayjs";
 
 import { Delete16 as Delete, Information16 } from "@carbon/icons-react";
 import {
@@ -191,15 +191,15 @@ const TableBase: React.FC<TableBaseProps> = (
     setRows(props.rows);
   }, [props.rows]);
 
-  let description = `from ${moment(rows[0].timeParsed).format(
+  let description = `from ${dayjs(rows[0].timeParsed).format(
     "YYYY/MM/DD HH:mm"
-  )} till ${moment(rows[rows.length - 1].timeParsed).format(
+  )} till ${dayjs(rows[rows.length - 1].timeParsed).format(
     "YYYY/MM/DD HH:mm"
   )}`;
   if (props.dateFormat) {
-    description = `from ${moment(rows[0].timeParsed).format(
+    description = `from ${dayjs(rows[0].timeParsed).format(
       props.dateFormat
-    )} till ${moment(rows[rows.length - 1].timeParsed).format(
+    )} till ${dayjs(rows[rows.length - 1].timeParsed).format(
       props.dateFormat
     )}`;
   }
@@ -360,11 +360,11 @@ const TableBase: React.FC<TableBaseProps> = (
                           <>
                             {props.dateFormat ? (
                               <>
-                                {moment(row[columnId]).format(props.dateFormat)}
+                                {dayjs(row[columnId]).format(props.dateFormat)}
                               </>
                             ) : (
                               <>
-                                {moment(row[columnId]).format(
+                                {dayjs(row[columnId]).format(
                                   "YYYY/MM/DD HH:mm"
                                 )}
                               </>
