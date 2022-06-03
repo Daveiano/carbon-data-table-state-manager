@@ -1,5 +1,3 @@
-TODO: Do folder difff against weewx-wdc
-
 ## About
 
 ## Features
@@ -9,7 +7,9 @@ TODO: Do folder difff against weewx-wdc
 ```sh
 yarn add carbon-data-table-state-manager
 ```
+
 or
+
 ```sh
 npm i carbon-data-table-state-manager --save
 ```
