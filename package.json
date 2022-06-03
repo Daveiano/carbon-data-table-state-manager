@@ -1,7 +1,23 @@
 {
   "name": "carbon-data-table-state-manager",
-  "private": false,
   "version": "0.0.1-alpha.1.0",
+  "license": "GPL-3.0-or-later",
+  "description": "Sample project for creating fully customized state management of carbon-components-react data table",
+  "homepage": "https://github.com/Daveiano/carbon-data-table-state-manager",
+  "bugs": {
+    "url": "https://github.com/Daveiano/carbon-data-table-state-manager/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Daveiano/carbon-data-table-state-manager.git"
+  },
+  "keywords": [
+    "carbon",
+    "component",
+    "components",
+    "carbon-design-system",
+    "react"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -9,11 +25,8 @@
   "files": [
     "/dist"
   ],
-  "license": "GPL-3.0-or-later",
-  "description": "Sample project for creating fully customized state management of carbon-components-react data table",
   "dependencies": {
     "dayjs": "^1.11.2",
-    "prop-types": "^15.7.0",
     "use-debounce": "^7.0.1"
   },
   "peerDependencies": {

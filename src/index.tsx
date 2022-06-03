@@ -43,8 +43,8 @@ export type dataItem = {
   rowId: number | string;
 };
 
-interface TableBaseProps {
-  collator: Intl.Collator;
+type TableBaseProps = {
+  collator?: Intl.Collator;
   columns: {
     id: string | number;
     title: string;
@@ -66,7 +66,19 @@ interface TableBaseProps {
   title?: string;
   dateFormat?: string;
   pageSizes?: number[];
-}
+  emptyCell?: string;
+} & DefaultProps;
+
+type DefaultProps = Partial<typeof defaultProps>;
+
+const defaultProps = {
+  collator: new Intl.Collator(),
+  hasSelection: false,
+  pageSize: 5,
+  size: "normal" as DataTableSize,
+  start: 0,
+  emptyCell: "-",
+};
 
 /**
  * An example state manager that an application can start with to achieve
@@ -98,6 +110,15 @@ interface TableBaseProps {
 const TableBase: React.FC<TableBaseProps> = (
   props: TableBaseProps
 ): React.ReactElement => {
+  props = { ...props, ...defaultProps };
+
+  // @todo Check default props.
+  console.log(props);
+
+  if (!props.collator) {
+    props.collator = new Intl.Collator();
+  }
+
   const [rows, setRows] = useState(props.rows);
   const [modalOpen, setModalOpen] = useState(false);
   const [sortInfo, setSortInfo] = useSortInfo(props.sortInfo);
@@ -275,8 +296,7 @@ const TableBase: React.FC<TableBaseProps> = (
                     selectedRowsCountInFiltered > 0 && !selectedAllInFiltered
                   }
                   ariaLabel="Select all rows"
-                  // @ts-ignore
-                  name={selectionAllName}
+                  name={selectionAllName !== undefined ? selectionAllName : ""}
                   onSelect={handleChangeSelectionAll}
                 />
               )}
@@ -346,8 +366,7 @@ const TableBase: React.FC<TableBaseProps> = (
                     <TableSelectRow
                       id={`${elementId}--select-${rowId}`}
                       checked={Boolean(selected)}
-                      // @ts-ignore
-                      name={selectionName}
+                      name={selectionName !== undefined ? selectionName : ""}
                       ariaLabel="Select row"
                       onSelect={handleChangeSelection}
                     />
@@ -371,7 +390,11 @@ const TableBase: React.FC<TableBaseProps> = (
                             )}
                           </>
                         ) : (
-                          <>{row[columnId]}</>
+                          <>
+                            {typeof row[columnId] !== "undefined"
+                              ? row[columnId]
+                              : props.emptyCell}
+                          </>
                         )}
                       </TableCell>
                     ))}
@@ -395,14 +418,6 @@ const TableBase: React.FC<TableBaseProps> = (
       </TableContainer>
     </>
   );
-};
-
-TableBase.defaultProps = {
-  collator: new Intl.Collator(),
-  hasSelection: false,
-  pageSize: 5,
-  size: "normal",
-  start: 0,
 };
 
 export default TableBase;
