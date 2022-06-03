@@ -1,6 +1,5 @@
 {
   "name": "carbon-data-table-state-manager",
-  "version": "1.0.0-alpha1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -17,9 +16,9 @@
     "use-debounce": "^7.0.1"
   },
   "peerDependencies": {
+    "@carbon/icons-react": "10.x",
     "carbon-components": "10.x",
     "carbon-components-react": "7.x",
-    "@carbon/icons-react": "10.x",
     "react": ">=16",
     "react-dom": ">=16"
   },
@@ -54,5 +53,6 @@
     "last 1 version",
     "Firefox ESR",
     "ie >= 11"
-  ]
+  ],
+  "version": "0.0.1-alpha.1.0"
 }
