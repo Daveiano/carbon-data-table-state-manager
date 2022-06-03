@@ -1,6 +1,7 @@
 {
   "name": "carbon-data-table-state-manager",
   "private": false,
+  "version": "0.0.1-alpha.1.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -53,6 +54,5 @@
     "last 1 version",
     "Firefox ESR",
     "ie >= 11"
-  ],
-  "version": "0.0.1-alpha.1.0"
+  ]
 }
