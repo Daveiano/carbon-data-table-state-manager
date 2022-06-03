@@ -4,8 +4,10 @@
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "/dist"
   ],
   "license": "GPL-3.0-or-later",
   "description": "Sample project for creating fully customized state management of carbon-components-react data table",
