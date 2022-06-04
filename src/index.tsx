@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-
 import dayjs from "dayjs";
 
 import { Delete16 as Delete, Information16 } from "@carbon/icons-react";
@@ -35,6 +34,7 @@ import {
   useUniqueId,
 } from "./hooks";
 import Pagination from "./components/pagination";
+import "./style.scss";
 import { dataHasRecordsForProperty, TABLE_SORT_DIRECTION } from "./misc";
 
 export type dataItem = {
@@ -43,7 +43,7 @@ export type dataItem = {
   rowId: number | string;
 };
 
-type TableBaseProps = {
+export type TableBaseProps = {
   collator?: Intl.Collator;
   columns: {
     id: string | number;
@@ -107,14 +107,10 @@ const defaultProps = {
  * @see https://github.com/carbon-design-system/carbon/issues/6373
  * @see https://github.com/carbon-design-system/carbon/tree/main/packages/react/examples/custom-data-table-state-manager
  */
-const TableBase: React.FC<TableBaseProps> = (
+export const TableBase: React.FC<TableBaseProps> = (
   props: TableBaseProps
 ): React.ReactElement => {
-  props = { ...props, ...defaultProps };
-
-  // @todo Check default props.
-  console.log(props);
-
+  props = { ...defaultProps, ...props };
   if (!props.collator) {
     props.collator = new Intl.Collator();
   }
@@ -418,6 +414,15 @@ const TableBase: React.FC<TableBaseProps> = (
       </TableContainer>
     </>
   );
+};
+
+TableBase.defaultProps = {
+  collator: new Intl.Collator(),
+  hasSelection: false,
+  pageSize: 5,
+  size: "normal" as DataTableSize,
+  start: 0,
+  emptyCell: "-",
 };
 
 export default TableBase;

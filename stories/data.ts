@@ -34,7 +34,6 @@ export const rows = [
     id: 1,
     name: "Load Balancer 1",
     protocol: "HTTP",
-    port: 80,
     rule: "Round Robin",
     attachedGroups: "Maureen's VM Groups",
     status: "Active",
@@ -72,5 +71,5 @@ export const rowsMany = Array.from(new Array(50))
 
 export const sortInfo = {
   columnId: "name",
-  direction: TABLE_SORT_DIRECTION.ASCENDING,
+  direction: TABLE_SORT_DIRECTION.ASC,
 };
