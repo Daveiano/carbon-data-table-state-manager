@@ -1,0 +1,40 @@
+name: Build and deploy Storybook to GitHub Pages
+
+on:
+  push:
+    paths:
+      - "stories/**"
+      - "src/**"
+    branches:
+      - 1.x
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: 🔨 setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: 🔨 install Yarn and dependecies
+        run: |
+          npm install -g yarn
+          yarn install
+          
+      - name: 🔧 Build Storybook
+        run: yarn run build-storybook
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.3.3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: storybook-static # The folder that the build-storybook script generates files.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+
+      - name: 🔨 uninstall Yarn
+        if: always()
+        run: npm uninstall -g yarn

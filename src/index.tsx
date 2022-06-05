@@ -40,7 +40,8 @@ import { dataHasRecordsForProperty, TABLE_SORT_DIRECTION } from "./misc";
 export type dataItem = {
   [key: string]: any;
   selected: boolean;
-  rowId: number | string;
+  time?: string | number;
+  //rowId: number | string;
 };
 
 export type TableBaseProps = {
@@ -107,7 +108,7 @@ const defaultProps = {
  * @see https://github.com/carbon-design-system/carbon/issues/6373
  * @see https://github.com/carbon-design-system/carbon/tree/main/packages/react/examples/custom-data-table-state-manager
  */
-export const TableBase: React.FC<TableBaseProps> = (
+export const CarbonDataTableStateManager: React.FC<TableBaseProps> = (
   props: TableBaseProps
 ): React.ReactElement => {
   props = { ...defaultProps, ...props };
@@ -208,17 +209,26 @@ export const TableBase: React.FC<TableBaseProps> = (
     setRows(props.rows);
   }, [props.rows]);
 
-  let description = `from ${dayjs(rows[0].timeParsed).format(
-    "YYYY/MM/DD HH:mm"
-  )} till ${dayjs(rows[rows.length - 1].timeParsed).format(
-    "YYYY/MM/DD HH:mm"
-  )}`;
-  if (props.dateFormat) {
-    description = `from ${dayjs(rows[0].timeParsed).format(
-      props.dateFormat
-    )} till ${dayjs(rows[rows.length - 1].timeParsed).format(
-      props.dateFormat
+  let description = "";
+  if (rows[0].time && rows[rows.length - 1].time) {
+    const start =
+      typeof rows[0].time === "number"
+        ? dayjs.unix(rows[0].time)
+        : dayjs(rows[0].time);
+    const end =
+      typeof rows[rows.length - 1].time === "number"
+        ? dayjs.unix(rows[rows.length - 1].time as number)
+        : dayjs(rows[rows.length - 1].time);
+
+    description = `from ${start.format("YYYY/MM/DD HH:mm")} till ${end.format(
+      "YYYY/MM/DD HH:mm"
     )}`;
+
+    if (props.dateFormat) {
+      description = `from ${start.format(props.dateFormat)} till ${end.format(
+        props.dateFormat
+      )}`;
+    }
   }
 
   return (
@@ -331,15 +341,24 @@ export const TableBase: React.FC<TableBaseProps> = (
                           </span>
                         </div>
 
-                        {tooltip && (
-                          <TooltipIcon
-                            align="start"
-                            tooltipText={tooltip}
-                            direction="bottom"
-                          >
-                            <Information16 />
-                          </TooltipIcon>
-                        )}
+                        {tooltip ||
+                          (columnId === "time" && (
+                            <TooltipIcon
+                              align="start"
+                              tooltipText={
+                                columnId === "time"
+                                  ? `Date format is ${
+                                      props.dateFormat
+                                        ? props.dateFormat
+                                        : "YYYY/MM/DD HH:mm"
+                                    }`
+                                  : tooltip
+                              }
+                              direction="bottom"
+                            >
+                              <Information16 />
+                            </TooltipIcon>
+                          ))}
                       </div>
                     </TableHeader>
                   );
@@ -369,31 +388,36 @@ export const TableBase: React.FC<TableBaseProps> = (
                   )}
                   {props.columns
                     .filter((item) => dataHasRecordsForProperty(item.id, rows))
-                    .map(({ id: columnId }) => (
-                      <TableCell key={columnId}>
-                        {columnId === "timeParsed" ? (
-                          <>
-                            {props.dateFormat ? (
-                              <>
-                                {dayjs(row[columnId]).format(props.dateFormat)}
-                              </>
-                            ) : (
-                              <>
-                                {dayjs(row[columnId]).format(
-                                  "YYYY/MM/DD HH:mm"
-                                )}
-                              </>
-                            )}
-                          </>
-                        ) : (
+                    .map(({ id: columnId }) => {
+                      if (columnId === "time") {
+                        const date =
+                          typeof row[columnId] === "number"
+                            ? dayjs.unix(row[columnId] as number)
+                            : dayjs(row[columnId]);
+
+                        return (
+                          <TableCell key={columnId}>
+                            <>
+                              {props.dateFormat ? (
+                                <>{date.format(props.dateFormat)}</>
+                              ) : (
+                                <>{date.format("YYYY/MM/DD HH:mm")}</>
+                              )}
+                            </>
+                          </TableCell>
+                        );
+                      }
+
+                      return (
+                        <TableCell key={columnId}>
                           <>
                             {typeof row[columnId] !== "undefined"
                               ? row[columnId]
                               : props.emptyCell}
                           </>
-                        )}
-                      </TableCell>
-                    ))}
+                        </TableCell>
+                      );
+                    })}
                 </TableRow>
               );
             })}
@@ -416,7 +440,7 @@ export const TableBase: React.FC<TableBaseProps> = (
   );
 };
 
-TableBase.defaultProps = {
+CarbonDataTableStateManager.defaultProps = {
   collator: new Intl.Collator(),
   hasSelection: false,
   pageSize: 5,
@@ -425,4 +449,4 @@ TableBase.defaultProps = {
   emptyCell: "-",
 };
 
-export default TableBase;
+export default CarbonDataTableStateManager;

@@ -36,7 +36,10 @@ const useSortedRows = (
           .sort(
             (lhs, rhs) =>
               collationFactors[sortDirection] *
-              compare(lhs[sortColumnId], rhs[sortColumnId])
+              compare(
+                lhs[sortColumnId] ? lhs[sortColumnId] : "",
+                rhs[sortColumnId] ? rhs[sortColumnId] : ""
+              )
           );
   return [sortedRows];
 };

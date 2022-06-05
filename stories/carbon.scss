@@ -1,1 +1,3 @@
 @import "~carbon-components/scss/globals/scss/styles.scss";
+@import "~@carbon/type/scss/classes";
+@include carbon--type-classes();

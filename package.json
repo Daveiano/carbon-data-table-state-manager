@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@carbon/icons-react": "10.22.0",
+    "@carbon/type": "10",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@storybook/addon-actions": "^6.5.6",
