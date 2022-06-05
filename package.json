@@ -1,6 +1,6 @@
 {
   "name": "carbon-data-table-state-manager",
-  "version": "0.0.1-alpha2.0",
+  "version": "0.0.1-beta1.0",
   "license": "GPL-3.0-or-later",
   "description": "Sample project for creating fully customized state management of carbon-components-react data table",
   "homepage": "https://github.com/Daveiano/carbon-data-table-state-manager",
