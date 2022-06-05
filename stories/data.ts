@@ -15,6 +15,7 @@ export const columns = [
   {
     title: "Felt temperature",
     small: `in °C`,
+    tooltip: "Some tooltip.",
     id: "felt_temperature",
     sortCycle: "tri-states-from-ascending",
   },

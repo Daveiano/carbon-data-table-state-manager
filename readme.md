@@ -103,7 +103,7 @@ const rows = [
 
 ### Storybook
 
-See the Storybook for more examples.
+See the [Storybook](https://daveiano.github.io/carbon-data-table-state-manager) for more examples.
 
 ### Props
 

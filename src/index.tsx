@@ -341,24 +341,23 @@ export const CarbonDataTableStateManager: React.FC<TableBaseProps> = (
                           </span>
                         </div>
 
-                        {tooltip ||
-                          (columnId === "time" && (
-                            <TooltipIcon
-                              align="start"
-                              tooltipText={
-                                columnId === "time"
-                                  ? `Date format is ${
-                                      props.dateFormat
-                                        ? props.dateFormat
-                                        : "YYYY/MM/DD HH:mm"
-                                    }`
-                                  : tooltip
-                              }
-                              direction="bottom"
-                            >
-                              <Information16 />
-                            </TooltipIcon>
-                          ))}
+                        {tooltip || columnId === "time" ? (
+                          <TooltipIcon
+                            align="start"
+                            tooltipText={
+                              columnId === "time"
+                                ? `Date format is ${
+                                    props.dateFormat
+                                      ? props.dateFormat
+                                      : "YYYY/MM/DD HH:mm"
+                                  }`
+                                : (tooltip as string)
+                            }
+                            direction="bottom"
+                          >
+                            <Information16 />
+                          </TooltipIcon>
+                        ) : null}
                       </div>
                     </TableHeader>
                   );
