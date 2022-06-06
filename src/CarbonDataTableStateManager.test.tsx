@@ -8,8 +8,16 @@ import {
   getAllByLabelText,
 } from "@testing-library/react";
 
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+
 import CarbonDataTableStateManager from "./index";
 import { columns, sortInfo, rows, rowsSelected } from "../stories/data";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.tz.setDefault("Europe/Berlin");
 
 describe("Tests for CarbonDataTableStateManager", () => {
   test("basic table render", () => {
