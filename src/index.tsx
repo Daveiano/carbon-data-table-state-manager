@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
 import { Delete16 as Delete, Information16 } from "@carbon/icons-react";
 import {
@@ -36,6 +38,9 @@ import {
 import Pagination from "./components/pagination";
 import "./style.scss";
 import { dataHasRecordsForProperty, TABLE_SORT_DIRECTION } from "./misc";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export type dataItem = {
   [key: string]: any;
@@ -213,12 +218,12 @@ export const CarbonDataTableStateManager: React.FC<TableBaseProps> = (
   if (rows[0].time && rows[rows.length - 1].time) {
     const start =
       typeof rows[0].time === "number"
-        ? dayjs.unix(rows[0].time)
-        : dayjs(rows[0].time);
+        ? dayjs.tz(dayjs.unix(rows[0].time))
+        : dayjs.tz(rows[0].time);
     const end =
       typeof rows[rows.length - 1].time === "number"
-        ? dayjs.unix(rows[rows.length - 1].time as number)
-        : dayjs(rows[rows.length - 1].time);
+        ? dayjs.tz(dayjs.unix(rows[rows.length - 1].time as number))
+        : dayjs.tz(rows[rows.length - 1].time);
 
     description = `from ${start.format("YYYY/MM/DD HH:mm")} till ${end.format(
       "YYYY/MM/DD HH:mm"
@@ -392,8 +397,8 @@ export const CarbonDataTableStateManager: React.FC<TableBaseProps> = (
                       if (columnId === "time") {
                         const date =
                           typeof row[columnId] === "number"
-                            ? dayjs.unix(row[columnId] as number)
-                            : dayjs(row[columnId]);
+                            ? dayjs.tz(dayjs.unix(row[columnId] as number))
+                            : dayjs.tz(row[columnId]);
 
                         return (
                           <TableCell key={columnId}>
