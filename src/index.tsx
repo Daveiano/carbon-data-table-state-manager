@@ -323,6 +323,7 @@ export const CarbonDataTableStateManager: React.FC<TableBaseProps> = (
                       )}
                       sortDirection={sortDirectionForThisCell}
                       data-column-id={columnId}
+                      data-testid={`sort-${columnId}`}
                       data-sort-cycle={sortCycle}
                       data-sort-direction={sortDirectionForThisCell}
                       onClick={handleChangeSort}
