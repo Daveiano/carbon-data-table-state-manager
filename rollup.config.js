@@ -27,6 +27,11 @@ export default {
     nodeResolve(),
     commonjs(),
     sass({ insert: true }),
-    typescript({ rollupCommonJSResolveHack: true }),
+    typescript({
+      rollupCommonJSResolveHack: true,
+      tsconfigOverride: {
+        exclude: ["**/*.test.tsx"],
+      },
+    }),
   ],
 };

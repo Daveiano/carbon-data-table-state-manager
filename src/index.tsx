@@ -416,9 +416,10 @@ export const CarbonDataTableStateManager: React.FC<TableBaseProps> = (
                       return (
                         <TableCell key={columnId}>
                           <>
-                            {typeof row[columnId] !== "undefined"
-                              ? row[columnId]
-                              : props.emptyCell}
+                            {typeof row[columnId] == "undefined" ||
+                            row[columnId] === null
+                              ? props.emptyCell
+                              : row[columnId]}
                           </>
                         </TableCell>
                       );

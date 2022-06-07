@@ -924,7 +924,9 @@ exports[`Tests for CarbonDataTableStateManager basic table render 1`] = `
             <td>
               989.7
             </td>
-            <td />
+            <td>
+              ---
+            </td>
             <td>
               1.1
             </td>
@@ -3610,7 +3612,9 @@ exports[`Tests for CarbonDataTableStateManager pagination 1`] = `
             <td>
               989.7
             </td>
-            <td />
+            <td>
+              ---
+            </td>
             <td>
               1.1
             </td>
@@ -4857,7 +4861,9 @@ exports[`Tests for CarbonDataTableStateManager pagination 2`] = `
             <td>
               989.7
             </td>
-            <td />
+            <td>
+              ---
+            </td>
             <td>
               1.1
             </td>
@@ -8595,7 +8601,9 @@ exports[`Tests for CarbonDataTableStateManager sorting 1`] = `
             <td>
               989.7
             </td>
-            <td />
+            <td>
+              -
+            </td>
             <td>
               1.1
             </td>
@@ -11573,7 +11581,9 @@ exports[`Tests for CarbonDataTableStateManager sorting 2`] = `
             <td>
               989.7
             </td>
-            <td />
+            <td>
+              -
+            </td>
             <td>
               1.1
             </td>
@@ -15061,7 +15071,9 @@ exports[`Tests for CarbonDataTableStateManager sorting 3`] = `
             <td>
               989.7
             </td>
-            <td />
+            <td>
+              -
+            </td>
             <td>
               1.1
             </td>
@@ -16611,7 +16623,9 @@ exports[`Tests for CarbonDataTableStateManager sorting 4`] = `
             <td>
               989.7
             </td>
-            <td />
+            <td>
+              -
+            </td>
             <td>
               1.1
             </td>
@@ -20745,7 +20759,9 @@ exports[`Tests for CarbonDataTableStateManager sorting 5`] = `
             <td>
               989.7
             </td>
-            <td />
+            <td>
+              -
+            </td>
             <td>
               1.1
             </td>

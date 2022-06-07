@@ -5,7 +5,6 @@ import {
   screen,
   fireEvent,
   getByLabelText,
-  getAllByLabelText,
 } from "@testing-library/react";
 
 import dayjs from "dayjs";
