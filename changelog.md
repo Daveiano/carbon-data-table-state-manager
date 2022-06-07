@@ -20,4 +20,7 @@
 
 - Fixed build bug
 
+# 1.0.2
+- Added dangerouslySetInnerHTML for rendering `small` in table headers
+
 # Next

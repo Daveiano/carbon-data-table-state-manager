@@ -8,7 +8,7 @@ export const columns = [
   },
   {
     title: "Temperature",
-    small: `in °C`,
+    small: `in &#176;C`,
     id: "temperature",
     sortCycle: "tri-states-from-ascending",
   },

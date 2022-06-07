@@ -61,9 +61,6 @@ exports[`Tests for CarbonDataTableStateManager basic table render 1`] = `
                         Time
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                       <button
                         aria-describedby="icon-tooltip-1"
@@ -794,9 +791,6 @@ exports[`Tests for CarbonDataTableStateManager basic table render 1`] = `
                         UV Index
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                     </div>
                   </div>
@@ -2749,9 +2743,6 @@ exports[`Tests for CarbonDataTableStateManager pagination 1`] = `
                         Time
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                       <button
                         aria-describedby="icon-tooltip-19"
@@ -3482,9 +3473,6 @@ exports[`Tests for CarbonDataTableStateManager pagination 1`] = `
                         UV Index
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                     </div>
                   </div>
@@ -3998,9 +3986,6 @@ exports[`Tests for CarbonDataTableStateManager pagination 2`] = `
                         Time
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                       <button
                         aria-describedby="icon-tooltip-21"
@@ -4731,9 +4716,6 @@ exports[`Tests for CarbonDataTableStateManager pagination 2`] = `
                         UV Index
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                     </div>
                   </div>
@@ -5909,9 +5891,6 @@ exports[`Tests for CarbonDataTableStateManager pagination 3`] = `
                         Time
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                       <button
                         aria-describedby="icon-tooltip-23"
@@ -6642,9 +6621,6 @@ exports[`Tests for CarbonDataTableStateManager pagination 3`] = `
                         UV Index
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                     </div>
                   </div>
@@ -7738,9 +7714,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 1`] = `
                         Time
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                       <button
                         aria-describedby="icon-tooltip-9"
@@ -8471,9 +8444,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 1`] = `
                         UV Index
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                     </div>
                   </div>
@@ -10412,9 +10382,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 2`] = `
                         Time
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                       <button
                         aria-describedby="icon-tooltip-11"
@@ -11145,9 +11112,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 2`] = `
                         UV Index
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                     </div>
                   </div>
@@ -13086,9 +13050,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 3`] = `
                         Time
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                       <button
                         aria-describedby="icon-tooltip-13"
@@ -13819,9 +13780,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 3`] = `
                         UV Index
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                     </div>
                   </div>
@@ -15760,9 +15718,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 4`] = `
                         Time
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                       <button
                         aria-describedby="icon-tooltip-15"
@@ -16493,9 +16448,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 4`] = `
                         UV Index
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                     </div>
                   </div>
@@ -18434,9 +18386,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 5`] = `
                         Time
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                       <button
                         aria-describedby="icon-tooltip-17"
@@ -19167,9 +19116,6 @@ exports[`Tests for CarbonDataTableStateManager sorting 5`] = `
                         UV Index
                          
                         <br />
-                        <span
-                          class="bx--type-helper-text-01"
-                        />
                       </div>
                     </div>
                   </div>

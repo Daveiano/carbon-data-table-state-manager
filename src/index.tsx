@@ -342,9 +342,12 @@ export const CarbonDataTableStateManager: React.FC<TableBaseProps> = (
                       >
                         <div style={{ marginRight: "20px" }}>
                           {title} <br />
-                          <span className="bx--type-helper-text-01">
-                            {small}
-                          </span>
+                          {typeof small === "string" ? (
+                            <span
+                              className="bx--type-helper-text-01"
+                              dangerouslySetInnerHTML={{ __html: small }}
+                            />
+                          ) : null}
                         </div>
 
                         {tooltip || columnId === "time" ? (
