@@ -21,6 +21,11 @@
 - Fixed build bug
 
 # 1.0.2
+
 - Added dangerouslySetInnerHTML for rendering `small` in table headers
+
+# 1.0.3
+
+- Changed '–' to '-' in pagination for better compatibility.
 
 # Next

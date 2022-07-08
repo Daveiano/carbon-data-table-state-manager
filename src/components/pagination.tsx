@@ -53,6 +53,7 @@ const Pagination = (props: PaginationProps): React.ReactElement => {
       pageSizes={props.pageSizes}
       totalItems={props.count}
       onChange={handleChangePage}
+      itemRangeText={(min, max, total) => `${min} - ${max} of ${total} items`}
     />
   );
 };

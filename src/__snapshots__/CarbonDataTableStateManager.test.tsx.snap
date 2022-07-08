@@ -2555,7 +2555,7 @@ exports[`Tests for CarbonDataTableStateManager basic table render 1`] = `
         <span
           class="bx--pagination__text bx--pagination__items-count"
         >
-          1–48 of 48 items
+          1 - 48 of 48 items
         </span>
       </div>
       <div
@@ -3775,7 +3775,7 @@ exports[`Tests for CarbonDataTableStateManager pagination 1`] = `
         <span
           class="bx--pagination__text bx--pagination__items-count"
         >
-          1–10 of 48 items
+          1 - 10 of 48 items
         </span>
       </div>
       <div
@@ -5698,7 +5698,7 @@ exports[`Tests for CarbonDataTableStateManager pagination 2`] = `
         <span
           class="bx--pagination__text bx--pagination__items-count"
         >
-          1–25 of 48 items
+          1 - 25 of 48 items
         </span>
       </div>
       <div
@@ -7535,7 +7535,7 @@ exports[`Tests for CarbonDataTableStateManager pagination 3`] = `
         <span
           class="bx--pagination__text bx--pagination__items-count"
         >
-          26–48 of 48 items
+          26 - 48 of 48 items
         </span>
       </div>
       <div
@@ -10208,7 +10208,7 @@ exports[`Tests for CarbonDataTableStateManager sorting 1`] = `
         <span
           class="bx--pagination__text bx--pagination__items-count"
         >
-          1–48 of 48 items
+          1 - 48 of 48 items
         </span>
       </div>
       <div
@@ -12876,7 +12876,7 @@ exports[`Tests for CarbonDataTableStateManager sorting 2`] = `
         <span
           class="bx--pagination__text bx--pagination__items-count"
         >
-          1–48 of 48 items
+          1 - 48 of 48 items
         </span>
       </div>
       <div
@@ -15544,7 +15544,7 @@ exports[`Tests for CarbonDataTableStateManager sorting 3`] = `
         <span
           class="bx--pagination__text bx--pagination__items-count"
         >
-          1–48 of 48 items
+          1 - 48 of 48 items
         </span>
       </div>
       <div
@@ -18212,7 +18212,7 @@ exports[`Tests for CarbonDataTableStateManager sorting 4`] = `
         <span
           class="bx--pagination__text bx--pagination__items-count"
         >
-          1–48 of 48 items
+          1 - 48 of 48 items
         </span>
       </div>
       <div
@@ -20880,7 +20880,7 @@ exports[`Tests for CarbonDataTableStateManager sorting 5`] = `
         <span
           class="bx--pagination__text bx--pagination__items-count"
         >
-          1–48 of 48 items
+          1 - 48 of 48 items
         </span>
       </div>
       <div

@@ -111,21 +111,21 @@ describe("Tests for CarbonDataTableStateManager", () => {
       "bx--pagination__items-count"
     );
     expect(itemCount.length).toBe(1);
-    expect(itemCount[0]).toHaveTextContent("1–10 of 48 items");
+    expect(itemCount[0]).toHaveTextContent("1 - 10 of 48 items");
     expect(container).toMatchSnapshot();
 
     // Set items per page.
     fireEvent.change(getByLabelText(container, "Items per page:"), {
       target: { value: 25 },
     });
-    expect(itemCount[0]).toHaveTextContent("1–25 of 48 items");
+    expect(itemCount[0]).toHaveTextContent("1 - 25 of 48 items");
     expect(container).toMatchSnapshot();
 
     // Use pager.
     fireEvent.change(getByLabelText(container, "Page number, of 2 pages"), {
       target: { value: 2 },
     });
-    expect(itemCount[0]).toHaveTextContent("26–48 of 48 items");
+    expect(itemCount[0]).toHaveTextContent("26 - 48 of 48 items");
     expect(container).toMatchSnapshot();
   });
 });
